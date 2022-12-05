@@ -1,0 +1,103 @@
+#Author Asyafa
+
+Pretest cheat sheet
+
+cd C:\   			 				(pindah directopry ke C)
+
+cd xamppp/mysql/bin   					(masuk ke directory server untuk start server)
+
+mysql -u root						(masuk ke database MariaDb)
+
+status;							(lihat status detail koneksi server)
+
+select version(), current_date; 			(liat versi mysql, dan tanggal sekarang)
+
+select Id_Dosen, Nama_Dosen, SUM(TunjanganJabatan+Gaji) from dosen group by Id_Dosen;
+
+create database [nama database]			(membuat database)
+ex : create database hewan	
+
+create table [nama tabel] (name VARCHAR(20), owner VARCHAR(20),
+ -> species VARCHAR(20), sex CHAR(1), birth DATE);	
+
+RENAME TABLE [namatabel_lama] TO [namatabel_baru];
+
+insert into [nama tabel]  {enter}
+values ()
+
+insert into namatabel(namakolom) {enter}
+values('data'), ('data'),.....;
+
+load data local infile 'D:/[nama file].txt'  {enter}
+into table [nama tabel];
+
+update [nama tabel] set nama_kolom = 'isinya' where kolom = 'isi kolom';
+
+update [nama table] set [nama kolom] = case 				{enter}
+when [nama kolom] = nilai data then [nilai data yang baru] 	{enter jika banyak}
+
+show databases;						(lihat semua data base di komputer lu)
+
+use [nama dabase]					(masuk ke database itu dan pakai)
+ex: use pethouse
+
+select database();					(lihat database yang lagi dipake)
+
+drop database [nama]					(hapus database)
+ex : drop database buku
+
+show tables;						(lihat semua tabel yang ada di dabase yang lagi lu pake)
+
+describe [nama tabel]					(lihat detail tabel)
+desc 
+
+ex: describe hewan
+
+select * from [nama tabel]				(lihat isi tabel)
+
+ALTER TABLE [namatabel] MODIFY [namakolom] [tipedata]
+
+ALTER TABLE [namatabel] ADD [namakolom_baru] [tipedata_baru] FIRST;
+
+ALTER TABLE [namatabel] CHANGE [namakolom_lama]
+[namakolom_baru] [tipedata_baru];
+
+ALTER TABLE [namatabel] ADD [namakolom_baru]
+[tipedata_baru] AFTER [namakolom_lama];
+
+ALTER TABLE [namatabel] DROP PRIMARY KEY;
+
+ALTER TABLE [namatabel] DROP [namakolom];
+
+ALTER TABLE [table_name] AUTO_INCREMENT = [start_value];
+
+ALTER TABLE [nama tabel] add [nama kolom baru 1] [tipe datanya], add [nama kolom baru 2] [tipe datanya] after [kolom yang ada];
+
+ALTER TABLE [nama tabel] ADD FOREIGN KEY (nama kolom) REFERENCES [nama tabel yang dikonek] (nama kolom)
+
+drop table [nama tabel]				(hapus tabel)
+
+delete from [nama tabel] where [nama kolom] = [nilai dalam kolomnya]
+
+delete from [nama tabel] {enter}			(untuk menghapus beberapa row)
+where [nama kolom] in ('', '')	
+
+
+SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE	## lihat info constraint
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_NAME='nama tabel';
+		
+
+\c								(pembatalan perintah)
+
+truncate [nama tabel]					(hapus semua isi tabel)
+
+# kata2 komen						(komen ditaruh di akhir perintah, dibelakang titik koma)
+--
+/**/
+
+
+
+quit								(keluar dari server)
+
+
